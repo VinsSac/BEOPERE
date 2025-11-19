@@ -10,7 +10,6 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 const app = express();
-const PORT = process.env.PORT || 3000;
 
 // Middleware
 app.use(cors());
@@ -31,6 +30,8 @@ mongoose
   });
 
 // Avvio server
-app.listen(PORT, () =>
-  console.log(`Server avviato su http://localhost:${PORT}`)
-);
+const PORT = process.env.PORT || 3000;
+
+app.listen(PORT, () => {
+  console.log(`Server online su porta ${PORT}`);
+});
