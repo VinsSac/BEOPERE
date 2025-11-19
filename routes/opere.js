@@ -19,8 +19,10 @@ router.post("/", upload.single("immagine"), async (req, res) => {
       titolo: req.body.titolo,
       descrizione: req.body.descrizione,
       anno: req.body.anno,
-      available: req.body.available === "true", // 🔥 FIX
+      available: req.body.available === "true",
       immagine: req.file ? req.file.filename : "",
+      orientamento: req.body.orientamento, // "verticale", "quadrata", "orizzontale"
+      collezione: req.body.collezione || "Generale", // default se non specificata
     });
 
     const salvata = await nuovaOpera.save();
@@ -29,7 +31,6 @@ router.post("/", upload.single("immagine"), async (req, res) => {
     res.status(500).json({ error: err.message });
   }
 });
-
 // GET tutte le opere
 router.get("/", async (req, res) => {
   try {
