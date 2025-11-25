@@ -5,7 +5,7 @@ const operaSchema = new mongoose.Schema({
   descrizione: { type: String, default: "" },
   anno: { type: Number },
   available: { type: Boolean, default: true },
-  immagine: { type: String, default: "" }, // nome file salvato in /uploads
+  immagine: { type: String, default: "" },
   orientamento: {
     type: String,
     enum: ["verticale", "quadrata", "orizzontale"],
