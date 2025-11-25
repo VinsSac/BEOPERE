@@ -40,9 +40,6 @@ router.post("/", upload.single("immagine"), async (req, res) => {
       return res.status(400).json({ error: "Nessun file caricato" });
     }
 
-    // DEBUG: controlla cosa restituisce Cloudinary
-    console.log("FILE CARICATO SU CLOUDINARY:", req.file);
-
     const nuovaOpera = new Opera({
       titolo: req.body.titolo,
       descrizione: req.body.descrizione,
