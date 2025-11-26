@@ -6,6 +6,7 @@ const operaSchema = new mongoose.Schema({
   anno: { type: Number },
   available: { type: Boolean, default: true },
   immagine: { type: String, default: "" },
+  prezzo: { type: String, required: true },
   orientamento: {
     type: String,
     enum: ["verticale", "quadrata", "orizzontale"],

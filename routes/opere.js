@@ -45,6 +45,7 @@ router.post("/", upload.single("immagine"), async (req, res) => {
       descrizione: req.body.descrizione,
       anno: req.body.anno,
       available: req.body.available === "true",
+      prezzo: req.body.prezzo,
       immagine: req.file.path || req.file.url, // sicurezza se cambia versione multer-storage-cloudinary
       orientamento: req.body.orientamento,
       collezione: req.body.collezione || "Generale",
